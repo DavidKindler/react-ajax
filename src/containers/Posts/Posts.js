@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from '../../axios';
 import Post from '../../components/Post/Post';
 import './Posts.css';
+// import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import FullPost from '../FullPost/FullPost';
 
 export default class Posts extends Component {
   state = {
@@ -12,9 +15,12 @@ export default class Posts extends Component {
 
   postSelectedHandler = id => {
     this.setState({ selectedPostid: id });
+    // this.props.history.push({ pathname: '/' + id });
+    this.props.history.push('/posts/' + id);
   };
 
   componentDidMount() {
+    // console.log(this.props);
     axios
       .get('/posts')
       .then(response => {
@@ -48,6 +54,12 @@ export default class Posts extends Component {
         );
       });
     }
-    return <section className="Posts">{posts}</section>;
+    console.log(this.props.match.url);
+    return (
+      <div>
+        <section className="Posts">{posts}</section>
+        <Route path={this.props.match.url + '/:id'} exact component={FullPost} />
+      </div>
+    );
   }
 }
