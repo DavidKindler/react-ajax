@@ -1,7 +1,6 @@
 {
-  "name": "react-complete-guide",
+  "name": "react-ajax",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "axios": "^0.17.1",
     "react": "^16.0.0",
