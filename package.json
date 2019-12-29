@@ -2,9 +2,9 @@
   "name": "react-ajax",
   "version": "0.1.0",
   "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.1",
     "axios": "^0.18.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "3.0.0",
